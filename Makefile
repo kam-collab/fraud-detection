@@ -7,6 +7,7 @@
 SHELL := /bin/bash
 .DEFAULT_GOAL := help
 PY := .venv/bin/python
+PYTHON ?= python3            # needs Python 3.10+; override with: make setup PYTHON=python3.13
 
 # ---------------------------------------------------------------------------
 # Setup
@@ -14,7 +15,7 @@ PY := .venv/bin/python
 
 .PHONY: setup
 setup: ## Create .venv and install Python dependencies
-	python3 -m venv .venv
+	$(PYTHON) -m venv .venv
 	$(PY) -m pip install --upgrade pip
 	$(PY) -m pip install -r app/requirements.txt
 

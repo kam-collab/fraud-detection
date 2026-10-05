@@ -23,7 +23,7 @@ patterns. They are not evidence of performance on real transactions.**
 ## Quick start
 
 ```bash
-make setup        # Python 3.10+; creates .venv, installs app/requirements.txt
+make setup        # Python 3.10+ (if python3 is older: make setup PYTHON=python3.13)
 make pipeline     # generate data -> train -> monitor (about 2 minutes)
 make test         # unit tests       (make test-all adds integration tests)
 make api          # scoring API on http://localhost:8000  (docs at /docs)
