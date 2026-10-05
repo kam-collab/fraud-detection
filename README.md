@@ -139,6 +139,26 @@ table, alert rules, actions and rollback plan are in [`docs/MONITORING.md`](docs
   Anthropic credentials); the numbers still come from the model. Only the template path was
   verified for this submission; the LLM call was not run against the live API.
 
+### Screenshots
+
+Captured from the console running against the local API (synthetic data).
+
+**Overview**: June hold-out metrics, confusion matrix and precision-recall curve.
+
+![Overview page](docs/screenshots/overview.png)
+
+**Score a transaction**: fraud score, decision band, top reasons and explanation.
+
+![Score a transaction page](docs/screenshots/score.png)
+
+**Review queue**: flagged payments with reasons, and approve or decline.
+
+![Review queue page](docs/screenshots/review.png)
+
+**Drift monitoring**: monthly status, alerts and recommended actions.
+
+![Drift monitoring page](docs/screenshots/monitoring.png)
+
 ## Repository layout
 
 ```
