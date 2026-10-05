@@ -1,0 +1,922 @@
+{
+  "model_version": "1.0.0",
+  "reference": {
+    "inputs": [
+      "2026-01-31",
+      "2026-05-01"
+    ],
+    "scores_and_metrics": [
+      "2026-06-08",
+      "2026-07-01"
+    ]
+  },
+  "thresholds": {
+    "psi_warn": 0.1,
+    "psi_alert": 0.25,
+    "ks_warn": 0.05,
+    "ks_alert": 0.1
+  },
+  "baseline": {
+    "metrics": {
+      "pr_auc": 0.7519565814193795,
+      "roc_auc": 0.9798570590382208,
+      "brier": 0.004606389752948807,
+      "threshold": 0.1149604465566546,
+      "precision": 0.533068783068783,
+      "recall": 0.7618147448015122,
+      "f1": 0.6272373540856031,
+      "accuracy": 0.9899335911230666,
+      "false_positive_rate": 0.007501859526086494,
+      "flag_rate": 0.015887693342299933,
+      "tp": 403,
+      "fp": 353,
+      "fn": 126,
+      "tn": 46702,
+      "n": 47584,
+      "fraud_rate": 0.011117182246133154
+    },
+    "ci95": {
+      "pr_auc": [
+        0.7115050589828592,
+        0.7916794205998768
+      ],
+      "roc_auc": [
+        0.972198660739549,
+        0.9855186071763409
+      ],
+      "precision": [
+        0.49732927341154376,
+        0.5692498265244167
+      ],
+      "recall": [
+        0.7188401651297929,
+        0.7988035430988895
+      ],
+      "f1": [
+        0.5941712039666724,
+        0.6575014293882218
+      ]
+    },
+    "business": {
+      "transactions": 47584,
+      "approval_rate": 0.9841123066577001,
+      "review_queue": 490,
+      "review_rate": 0.010297579018157364,
+      "blocked": 266,
+      "false_declines": 11,
+      "false_decline_amount": 238600.09,
+      "genuine_sent_to_review": 342,
+      "fraud_amount_total": 10529103.94,
+      "fraud_loss_amount": 1036631.5729999999,
+      "fraud_amount_prevented": 9492472.366999999,
+      "fraud_value_recall": 0.9015460784785453,
+      "total_cost": 1060139.5757,
+      "cost_without_model": 10529103.94,
+      "false_decline_rate": 0.00023117014122394082,
+      "review_queue_per_day": 21.304347826086957
+    }
+  },
+  "months": [
+    {
+      "month": "2026-07",
+      "rows": 67900,
+      "data_quality": {
+        "ok": true,
+        "errors": [],
+        "warnings": []
+      },
+      "data_drift": [
+        {
+          "feature": "amount",
+          "kind": "numeric",
+          "psi": 0.0007014445152563353,
+          "ks": 0.010021505393905505,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        },
+        {
+          "feature": "hour",
+          "kind": "numeric",
+          "psi": 0.00013395353109450369,
+          "ks": 0.003034807906606485,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        },
+        {
+          "feature": "service_type",
+          "kind": "categorical",
+          "psi": 0.0018382653320853759,
+          "ks": null,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        },
+        {
+          "feature": "merchant_type",
+          "kind": "categorical",
+          "psi": 3.1713029584641594e-05,
+          "ks": null,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        },
+        {
+          "feature": "mcc_code",
+          "kind": "categorical",
+          "psi": 0.0007140995903143099,
+          "ks": null,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        },
+        {
+          "feature": "issuer_bank",
+          "kind": "categorical",
+          "psi": 0.001162133277012223,
+          "ks": null,
+          "missing_ref": 0.00948156362628223,
+          "missing_cur": 0.009646539027982327,
+          "status": "ok"
+        },
+        {
+          "feature": "dev_cnt_24h",
+          "kind": "numeric",
+          "psi": 0.002256033646895295,
+          "ks": 0.02048139953327177,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        },
+        {
+          "feature": "dev_logamt_z",
+          "kind": "numeric",
+          "psi": 0.004013809352515856,
+          "ks": 0.0062316650881694136,
+          "missing_ref": 0.39837353294519917,
+          "missing_cur": 0.3687039764359352,
+          "status": "ok"
+        },
+        {
+          "feature": "dev_new_merchant",
+          "kind": "numeric",
+          "psi": 0.0008788646429129532,
+          "ks": 0.014478492496521611,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        },
+        {
+          "feature": "mer_logamt_z",
+          "kind": "numeric",
+          "psi": 0.002506063911975556,
+          "ks": 0.013469063439578599,
+          "missing_ref": 0.005205926747373933,
+          "missing_cur": 0.002857142857142857,
+          "status": "ok"
+        },
+        {
+          "feature": "mer_fraud_rate_lag",
+          "kind": "numeric",
+          "psi": 0.007698200270601588,
+          "ks": 0.024636672805296828,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        },
+        {
+          "feature": "is_night",
+          "kind": "numeric",
+          "psi": 4.1374360749577806e-06,
+          "ks": 0.0004732180199984448,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        }
+      ],
+      "prediction_drift": {
+        "score_psi": 0.00035669290411884265,
+        "mean_score": 0.01110357615106,
+        "baseline_mean_score": 0.010516581688175635,
+        "flag_rate": 0.016406480117820324,
+        "baseline_flag_rate": 0.015887693342299933,
+        "flag_rate_change": 0.03265337291846859,
+        "block_rate": 0.0062444771723122235,
+        "baseline_block_rate": 0.005590114324142569,
+        "status": "ok"
+      },
+      "performance": {
+        "pr_auc": 0.7004971905798457,
+        "roc_auc": 0.9430588471369437,
+        "precision": 0.5341113105924596,
+        "recall": 0.7185990338164251,
+        "f1": 0.6127703398558187,
+        "false_positive_rate": 0.007737953244274809,
+        "tp": 595,
+        "fp": 519,
+        "fn": 233,
+        "tn": 66553,
+        "fraud_rate": 0.01219440353460972,
+        "baseline_pr_auc": 0.7519565814193795,
+        "baseline_roc_auc": 0.9798570590382208,
+        "baseline_precision": 0.533068783068783,
+        "baseline_recall": 0.7618147448015122,
+        "baseline_f1": 0.6272373540856031,
+        "pr_auc_status": "warn",
+        "precision_status": "ok",
+        "recall_status": "warn",
+        "f1_status": "ok",
+        "labels_available_from": "2026-08-08"
+      },
+      "business": {
+        "transactions": 67900,
+        "approval_rate": 0.9835935198821797,
+        "review_queue": 690,
+        "review_rate": 0.0101620029455081,
+        "blocked": 424,
+        "false_declines": 30,
+        "false_decline_amount": 623995.2000000002,
+        "genuine_sent_to_review": 489,
+        "fraud_amount_total": 15042152.41,
+        "fraud_loss_amount": 1323572.8219999997,
+        "fraud_amount_prevented": 13718579.588,
+        "fraud_value_recall": 0.912009080487704,
+        "total_cost": 1367492.6779999996,
+        "cost_without_model": 15042152.41,
+        "false_decline_rate": 0.0004418262150220913,
+        "baseline_approval_rate": 0.9841123066577001,
+        "baseline_review_rate": 0.010297579018157364,
+        "baseline_false_decline_rate": 0.00023117014122394082,
+        "baseline_fraud_value_recall": 0.9015460784785453,
+        "review_queue_per_day": 22.258064516129032
+      },
+      "recall_by_pattern": [
+        {
+          "group": "A_takeover",
+          "frauds": 346,
+          "recall": 0.9393063583815029
+        },
+        {
+          "group": "B_mule",
+          "frauds": 191,
+          "recall": 0.9633507853403142
+        },
+        {
+          "group": "C_stealth",
+          "frauds": 169,
+          "recall": 0.44970414201183434
+        },
+        {
+          "group": "D_upi_scam",
+          "frauds": 99,
+          "recall": 0.10101010101010101
+        },
+        {
+          "group": "genuine",
+          "frauds": 23,
+          "recall": 0.0
+        }
+      ],
+      "actions": [
+        {
+          "severity": "warn",
+          "issue": "Recall 0.72 vs 0.76, PR-AUC 0.70 vs 0.75 (fraud being missed)",
+          "action": "Train a challenger on recent data, run it in shadow mode against the champion, and promote it if it wins at the same alert rate. Retrain on a fixed schedule afterwards."
+        }
+      ],
+      "status": "warn"
+    },
+    {
+      "month": "2026-08",
+      "rows": 75957,
+      "data_quality": {
+        "ok": true,
+        "errors": [],
+        "warnings": []
+      },
+      "data_drift": [
+        {
+          "feature": "amount",
+          "kind": "numeric",
+          "psi": 0.06160588457839223,
+          "ks": 0.09138841519627527,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "warn"
+        },
+        {
+          "feature": "hour",
+          "kind": "numeric",
+          "psi": 0.022479997248454158,
+          "ks": 0.04956444788921177,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        },
+        {
+          "feature": "service_type",
+          "kind": "categorical",
+          "psi": 0.024036810209834683,
+          "ks": null,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        },
+        {
+          "feature": "merchant_type",
+          "kind": "categorical",
+          "psi": 0.016381822889950604,
+          "ks": null,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        },
+        {
+          "feature": "mcc_code",
+          "kind": "categorical",
+          "psi": 0.08797653772954687,
+          "ks": null,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        },
+        {
+          "feature": "issuer_bank",
+          "kind": "categorical",
+          "psi": 0.0067000478771386965,
+          "ks": null,
+          "missing_ref": 0.00948156362628223,
+          "missing_cur": 0.010374290717116263,
+          "status": "ok"
+        },
+        {
+          "feature": "dev_cnt_24h",
+          "kind": "numeric",
+          "psi": 0.010488413514407586,
+          "ks": 0.04483589934590304,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        },
+        {
+          "feature": "dev_logamt_z",
+          "kind": "numeric",
+          "psi": 0.018635525312059753,
+          "ks": 0.03422233561832333,
+          "missing_ref": 0.39837353294519917,
+          "missing_cur": 0.3443263951972827,
+          "status": "ok"
+        },
+        {
+          "feature": "dev_new_merchant",
+          "kind": "numeric",
+          "psi": 4.63821268862665e-05,
+          "ks": 0.003312396787146621,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        },
+        {
+          "feature": "mer_logamt_z",
+          "kind": "numeric",
+          "psi": 0.0048864773032588835,
+          "ks": 0.020797719431235984,
+          "missing_ref": 0.005205926747373933,
+          "missing_cur": 0.002317100464736627,
+          "status": "ok"
+        },
+        {
+          "feature": "mer_fraud_rate_lag",
+          "kind": "numeric",
+          "psi": 0.024435986013668125,
+          "ks": 0.04258475991680838,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        },
+        {
+          "feature": "is_night",
+          "kind": "numeric",
+          "psi": 0.03186033857454575,
+          "ks": 0.048084983982536356,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        }
+      ],
+      "prediction_drift": {
+        "score_psi": 0.02688351851214218,
+        "mean_score": 0.012102612143170788,
+        "baseline_mean_score": 0.010516581688175635,
+        "flag_rate": 0.01957686585831457,
+        "baseline_flag_rate": 0.015887693342299933,
+        "flag_rate_change": 0.23220315476460396,
+        "block_rate": 0.005147649327909212,
+        "baseline_block_rate": 0.005590114324142569,
+        "status": "ok"
+      },
+      "performance": {
+        "pr_auc": 0.4735685454398423,
+        "roc_auc": 0.8617651711551683,
+        "precision": 0.42434431741761935,
+        "recall": 0.47159940209267565,
+        "f1": 0.4467256637168141,
+        "false_positive_rate": 0.011471609107599942,
+        "tp": 631,
+        "fp": 856,
+        "fn": 707,
+        "tn": 73763,
+        "fraud_rate": 0.017615229669418222,
+        "baseline_pr_auc": 0.7519565814193795,
+        "baseline_roc_auc": 0.9798570590382208,
+        "baseline_precision": 0.533068783068783,
+        "baseline_recall": 0.7618147448015122,
+        "baseline_f1": 0.6272373540856031,
+        "pr_auc_status": "alert",
+        "precision_status": "alert",
+        "recall_status": "alert",
+        "f1_status": "alert",
+        "labels_available_from": "2026-09-08"
+      },
+      "business": {
+        "transactions": 75957,
+        "approval_rate": 0.9804231341416855,
+        "review_queue": 1096,
+        "review_rate": 0.01442921653040536,
+        "blocked": 391,
+        "false_declines": 23,
+        "false_decline_amount": 689812.7799999998,
+        "genuine_sent_to_review": 833,
+        "fraud_amount_total": 17001891.16,
+        "fraud_loss_amount": 3309969.051,
+        "fraud_amount_prevented": 13691922.109000001,
+        "fraud_value_recall": 0.8053175955632926,
+        "total_cost": 3366993.4344,
+        "cost_without_model": 17001891.16,
+        "false_decline_rate": 0.00030280290164171834,
+        "baseline_approval_rate": 0.9841123066577001,
+        "baseline_review_rate": 0.010297579018157364,
+        "baseline_false_decline_rate": 0.00023117014122394082,
+        "baseline_fraud_value_recall": 0.9015460784785453,
+        "review_queue_per_day": 35.354838709677416
+      },
+      "recall_by_pattern": [
+        {
+          "group": "A_takeover",
+          "frauds": 360,
+          "recall": 0.9
+        },
+        {
+          "group": "B_mule",
+          "frauds": 150,
+          "recall": 0.9133333333333333
+        },
+        {
+          "group": "C_stealth",
+          "frauds": 233,
+          "recall": 0.48497854077253216
+        },
+        {
+          "group": "D_upi_scam",
+          "frauds": 569,
+          "recall": 0.10017574692442882
+        },
+        {
+          "group": "genuine",
+          "frauds": 26,
+          "recall": 0.0
+        }
+      ],
+      "actions": [
+        {
+          "severity": "warn",
+          "issue": "Input drift: amount (PSI 0.06, KS 0.09)",
+          "action": "Confirm it is a real business change (pricing, promotion, product mix) and not a pipeline fault; if real, check prediction drift and schedule a challenger trained on recent data."
+        },
+        {
+          "severity": "alert",
+          "issue": "Precision 0.42 vs baseline 0.53 (more false positives)",
+          "action": "Re-tune the decision thresholds on the most recent labelled window to restore the precision floor."
+        },
+        {
+          "severity": "alert",
+          "issue": "Recall 0.47 vs 0.76, PR-AUC 0.47 vs 0.75 (fraud being missed)",
+          "action": "Train a challenger on recent data, run it in shadow mode against the champion, and promote it if it wins at the same alert rate. Retrain on a fixed schedule afterwards."
+        }
+      ],
+      "status": "alert"
+    },
+    {
+      "month": "2026-09",
+      "rows": 87525,
+      "data_quality": {
+        "ok": true,
+        "errors": [],
+        "warnings": [
+          "issuer_bank: 9.9% missing (limit 5%)"
+        ]
+      },
+      "data_drift": [
+        {
+          "feature": "amount",
+          "kind": "numeric",
+          "psi": 0.08064055333369469,
+          "ks": 0.10699762363432619,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "alert"
+        },
+        {
+          "feature": "hour",
+          "kind": "numeric",
+          "psi": 0.022475697034629545,
+          "ks": 0.04936797573856477,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        },
+        {
+          "feature": "service_type",
+          "kind": "categorical",
+          "psi": 0.06221116869324592,
+          "ks": null,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        },
+        {
+          "feature": "merchant_type",
+          "kind": "categorical",
+          "psi": 0.016512271350941056,
+          "ks": null,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        },
+        {
+          "feature": "mcc_code",
+          "kind": "categorical",
+          "psi": 0.08861367988406903,
+          "ks": null,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        },
+        {
+          "feature": "issuer_bank",
+          "kind": "categorical",
+          "psi": 0.2331672936545305,
+          "ks": null,
+          "missing_ref": 0.00948156362628223,
+          "missing_cur": 0.0985889745786918,
+          "status": "warn"
+        },
+        {
+          "feature": "dev_cnt_24h",
+          "kind": "numeric",
+          "psi": 0.060333559216359064,
+          "ks": 0.11121424295818838,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "alert"
+        },
+        {
+          "feature": "dev_logamt_z",
+          "kind": "numeric",
+          "psi": 0.054049662506735874,
+          "ks": 0.013027016190679919,
+          "missing_ref": 0.39837353294519917,
+          "missing_cur": 0.29110539845758354,
+          "status": "ok"
+        },
+        {
+          "feature": "dev_new_merchant",
+          "kind": "numeric",
+          "psi": 0.0025225147324522412,
+          "ks": 0.02458123612668156,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        },
+        {
+          "feature": "mer_logamt_z",
+          "kind": "numeric",
+          "psi": 0.00759357189915248,
+          "ks": 0.0194118168450223,
+          "missing_ref": 0.005205926747373933,
+          "missing_cur": 0.0013253356183947445,
+          "status": "ok"
+        },
+        {
+          "feature": "mer_fraud_rate_lag",
+          "kind": "numeric",
+          "psi": 0.16105629697204782,
+          "ks": 0.18183371743682564,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "alert"
+        },
+        {
+          "feature": "is_night",
+          "kind": "numeric",
+          "psi": 0.03142238507268831,
+          "ks": 0.04771064103273748,
+          "missing_ref": 0.0,
+          "missing_cur": 0.0,
+          "status": "ok"
+        }
+      ],
+      "prediction_drift": {
+        "score_psi": 0.0552013105257803,
+        "mean_score": 0.014717476743407941,
+        "baseline_mean_score": 0.010516581688175635,
+        "flag_rate": 0.024735789774350186,
+        "baseline_flag_rate": 0.015887693342299933,
+        "flag_rate_change": 0.5569151066437557,
+        "block_rate": 0.0064095972579263066,
+        "baseline_block_rate": 0.005590114324142569,
+        "status": "alert"
+      },
+      "performance": {
+        "pr_auc": 0.41728194538762364,
+        "roc_auc": 0.8595747787995139,
+        "precision": 0.3833718244803695,
+        "recall": 0.4350104821802935,
+        "f1": 0.40756199361649886,
+        "false_positive_rate": 0.01559269771190301,
+        "tp": 830,
+        "fp": 1335,
+        "fn": 1078,
+        "tn": 84282,
+        "fraud_rate": 0.021799485861182518,
+        "baseline_pr_auc": 0.7519565814193795,
+        "baseline_roc_auc": 0.9798570590382208,
+        "baseline_precision": 0.533068783068783,
+        "baseline_recall": 0.7618147448015122,
+        "baseline_f1": 0.6272373540856031,
+        "pr_auc_status": "alert",
+        "precision_status": "alert",
+        "recall_status": "alert",
+        "f1_status": "alert",
+        "labels_available_from": "2026-10-08"
+      },
+      "business": {
+        "transactions": 87525,
+        "approval_rate": 0.9752642102256498,
+        "review_queue": 1604,
+        "review_rate": 0.018326192516423877,
+        "blocked": 561,
+        "false_declines": 80,
+        "false_decline_amount": 1889678.3399999999,
+        "genuine_sent_to_review": 1255,
+        "fraud_amount_total": 21970190.36,
+        "fraud_loss_amount": 4402399.814,
+        "fraud_amount_prevented": 17567790.546,
+        "fraud_value_recall": 0.7996194051183451,
+        "total_cost": 4519210.1642,
+        "cost_without_model": 21970190.36,
+        "false_decline_rate": 0.0009140245644101685,
+        "baseline_approval_rate": 0.9841123066577001,
+        "baseline_review_rate": 0.010297579018157364,
+        "baseline_false_decline_rate": 0.00023117014122394082,
+        "baseline_fraud_value_recall": 0.9015460784785453,
+        "review_queue_per_day": 53.46666666666667
+      },
+      "recall_by_pattern": [
+        {
+          "group": "A_takeover",
+          "frauds": 416,
+          "recall": 0.8605769230769231
+        },
+        {
+          "group": "B_mule",
+          "frauds": 247,
+          "recall": 0.9473684210526315
+        },
+        {
+          "group": "C_stealth",
+          "frauds": 234,
+          "recall": 0.4700854700854701
+        },
+        {
+          "group": "D_upi_scam",
+          "frauds": 981,
+          "recall": 0.12945973496432212
+        },
+        {
+          "group": "genuine",
+          "frauds": 30,
+          "recall": 0.03333333333333333
+        }
+      ],
+      "actions": [
+        {
+          "severity": "warn",
+          "issue": "Data quality: issuer_bank: 9.9% missing (limit 5%)",
+          "action": "Investigate data quality with the upstream owner before trusting scores; do not retrain on the affected rows until fixed."
+        },
+        {
+          "severity": "alert",
+          "issue": "Input drift: amount (PSI 0.08, KS 0.11), issuer_bank (PSI 0.23), dev_cnt_24h (PSI 0.06, KS 0.11), mer_fraud_rate_lag (PSI 0.16, KS 0.18)",
+          "action": "Confirm it is a real business change (pricing, promotion, product mix) and not a pipeline fault; if real, check prediction drift and schedule a challenger trained on recent data."
+        },
+        {
+          "severity": "alert",
+          "issue": "Prediction drift: 2.47% of payments flagged for review or block vs 1.59% at release (+56%); score PSI 0.06",
+          "action": "Adjust the decision thresholds to keep the review queue within analyst capacity, then confirm with labels once they arrive."
+        },
+        {
+          "severity": "alert",
+          "issue": "Precision 0.38 vs baseline 0.53 (more false positives)",
+          "action": "Re-tune the decision thresholds on the most recent labelled window to restore the precision floor."
+        },
+        {
+          "severity": "alert",
+          "issue": "Recall 0.44 vs 0.76, PR-AUC 0.42 vs 0.75 (fraud being missed)",
+          "action": "Train a challenger on recent data, run it in shadow mode against the champion, and promote it if it wins at the same alert rate. Retrain on a fixed schedule afterwards."
+        },
+        {
+          "severity": "alert",
+          "issue": "Severe performance collapse (PR-AUC below 60% of the release baseline)",
+          "action": "If this followed a model or pipeline release, roll back to the previous version. If it built up gradually (a new fraud pattern), add a temporary rule for the pattern and fast-track the challenger."
+        },
+        {
+          "severity": "warn",
+          "issue": "False declines 0.091% of traffic vs 0.023% at release",
+          "action": "Raise the block threshold (send borderline cases to review instead of declining)."
+        }
+      ],
+      "status": "alert"
+    }
+  ],
+  "score_histogram": {
+    "edges": [
+      0.0,
+      0.05,
+      0.1,
+      0.15000000000000002,
+      0.2,
+      0.25,
+      0.30000000000000004,
+      0.35000000000000003,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6000000000000001,
+      0.65,
+      0.7000000000000001,
+      0.75,
+      0.8,
+      0.8500000000000001,
+      0.9,
+      0.9500000000000001,
+      1.0
+    ],
+    "baseline_june": [
+      0.9749495628782784,
+      0.007943846671149966,
+      0.0032784129119031607,
+      0.002101546738399462,
+      0.0014500672494956288,
+      0.0010717888365837256,
+      0.0007565568258238063,
+      0.0005464021519838602,
+      0.0006094485541358439,
+      0.00048335574983187626,
+      0.00046234028244788165,
+      0.00039929388029589775,
+      0.00035726294552790853,
+      0.0002732010759919301,
+      0.00044132481506388703,
+      0.0003152320107599193,
+      0.00037827841291190314,
+      0.00046234028244788165,
+      0.0011138197713517148,
+      0.002605917955615333
+    ],
+    "2026-07": [
+      0.973740795287187,
+      0.008483063328424153,
+      0.0035051546391752578,
+      0.0021207658321060383,
+      0.0014727540500736377,
+      0.0007069219440353461,
+      0.0007363770250368188,
+      0.0006921944035346097,
+      0.0006038291605301914,
+      0.0004418262150220913,
+      0.00035346097201767305,
+      0.0003681885125184094,
+      0.0005301914580265096,
+      0.00039764359351988215,
+      0.0004565537555228277,
+      0.0004418262150220913,
+      0.00042709867452135495,
+      0.0006774668630338734,
+      0.0011487481590574374,
+      0.002695139911634757
+    ],
+    "2026-08": [
+      0.9659412562370815,
+      0.012414918967310453,
+      0.00538462551180273,
+      0.0030148636728675434,
+      0.0020142975630949088,
+      0.001461353134010032,
+      0.000908408704925155,
+      0.0007899206129783956,
+      0.0009347393920244349,
+      0.0005266137419855971,
+      0.0005002830548863173,
+      0.0004344563371381176,
+      0.0005002830548863173,
+      0.0003291335887409982,
+      0.0003554642758402781,
+      0.00026330687099279854,
+      0.0005002830548863173,
+      0.0005397790855352371,
+      0.0009610700791237147,
+      0.002224943059889148
+    ],
+    "2026-09": [
+      0.9574407312196516,
+      0.01543558983147672,
+      0.006375321336760925,
+      0.0037017994858611824,
+      0.00276492430734076,
+      0.0018508997429305912,
+      0.0013481862325049987,
+      0.000982576406740931,
+      0.001062553556126821,
+      0.0008226221079691517,
+      0.0006512425021422451,
+      0.000639817195087118,
+      0.0004912882033704655,
+      0.0006740931162524993,
+      0.00045701228220508425,
+      0.0006055412739217367,
+      0.00044558697514995713,
+      0.0008226221079691517,
+      0.0009254498714652956,
+      0.0025021422450728363
+    ]
+  },
+  "remediation": {
+    "window": [
+      "2026-09-08",
+      "2026-10-01"
+    ],
+    "rows": [
+      {
+        "model": "champion v1.0.0 (unchanged)",
+        "pr_auc": 0.40386430529884426,
+        "roc_auc": 0.8578450737487616,
+        "precision": 0.3714121699196326,
+        "recall": 0.4279100529100529,
+        "f1": 0.39766441303011685,
+        "fp": 1095,
+        "fn": 865,
+        "review_threshold": 0.1149604465566546,
+        "block_threshold": 0.6521341112171749,
+        "false_declines": 59,
+        "review_queue": 1321,
+        "fraud_loss_amount": 3469958.165,
+        "total_cost": 3561010.5407000002
+      },
+      {
+        "model": "champion v1.0.0, thresholds re-tuned on August",
+        "pr_auc": 0.40386430529884426,
+        "roc_auc": 0.8578450737487616,
+        "precision": 0.43342981186685964,
+        "recall": 0.39616402116402116,
+        "f1": 0.4139599170697996,
+        "fp": 783,
+        "fn": 913,
+        "review_threshold": 0.16039596246267213,
+        "block_threshold": 0.7138391781579525,
+        "false_declines": 43,
+        "review_queue": 1012,
+        "fraud_loss_amount": 3986685.8659999995,
+        "total_cost": 4056009.6949999994
+      },
+      {
+        "model": "challenger v1.1.0 (trained to end of July, shadow)",
+        "pr_auc": 0.44295058429746337,
+        "roc_auc": 0.8886910422247409,
+        "precision": 0.4560669456066946,
+        "recall": 0.43253968253968256,
+        "f1": 0.4439918533604888,
+        "fp": 780,
+        "fn": 858,
+        "review_threshold": 0.19078788930981605,
+        "block_threshold": 0.631635555345409,
+        "false_declines": 41,
+        "review_queue": 1032,
+        "fraud_loss_amount": 3566909.2770000002,
+        "total_cost": 3624920.8872
+      }
+    ]
+  }
+}

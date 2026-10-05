@@ -1,0 +1,100 @@
+{
+  "model_version": "1.0.0",
+  "trained_at": "2026-10-04T16:36:45+00:00",
+  "data": {
+    "source": "synthetic (app/controllers/data_generation/generator.py)",
+    "seed": 42,
+    "rows": 566754,
+    "fraud_rate": 0.013840219919047771
+  },
+  "windows": {
+    "train": [
+      "2026-01-31",
+      "2026-05-01"
+    ],
+    "valid": [
+      "2026-05-08",
+      "2026-06-01"
+    ],
+    "test": [
+      "2026-06-08",
+      "2026-07-01"
+    ],
+    "label_delay_days": 7
+  },
+  "policy": {
+    "review_min_precision": 0.5,
+    "block_min_precision": 0.95
+  },
+  "features": [
+    "log_amount",
+    "amount_is_round",
+    "hour",
+    "day_of_week",
+    "is_night",
+    "is_weekend",
+    "hour_sin",
+    "hour_cos",
+    "dev_cnt_10m",
+    "dev_cnt_1h",
+    "dev_cnt_24h",
+    "dev_cnt_7d",
+    "dev_amt_sum_1h",
+    "dev_amt_sum_24h",
+    "dev_secs_since_last",
+    "dev_cnt_30d",
+    "dev_age_days",
+    "dev_logamt_z",
+    "dev_amt_ratio",
+    "dev_new_merchant",
+    "dev_new_merchants_24h",
+    "dev_new_service",
+    "dev_fail_cnt_1h",
+    "dev_fail_cnt_24h",
+    "mer_cnt_1h",
+    "mer_cnt_30d",
+    "mer_logamt_z",
+    "mer_fraud_rate_lag",
+    "service_type",
+    "merchant_type",
+    "mcc_code",
+    "issuer_bank",
+    "merchant_state"
+  ],
+  "algorithm": "gbm | sqrt weights | lr=0.05 trees=300",
+  "thresholds": {
+    "review": 0.1149604465566546,
+    "block": 0.6521341112171749
+  },
+  "release_baseline": {
+    "pr_auc": 0.7519565814193795,
+    "roc_auc": 0.9798570590382208,
+    "precision": 0.533068783068783,
+    "recall": 0.7618147448015122,
+    "f1": 0.6272373540856031,
+    "false_positive_rate": 0.007501859526086494
+  },
+  "release_baseline_ci95": {
+    "pr_auc": [
+      0.7115050589828592,
+      0.7916794205998768
+    ],
+    "roc_auc": [
+      0.972198660739549,
+      0.9855186071763409
+    ],
+    "precision": [
+      0.49732927341154376,
+      0.5692498265244167
+    ],
+    "recall": [
+      0.7188401651297929,
+      0.7988035430988895
+    ],
+    "f1": [
+      0.5941712039666724,
+      0.6575014293882218
+    ]
+  },
+  "rollback": "Keep the previous models/fraud_model.joblib as fraud_model.prev.joblib; roll back by restoring it and restarting the API (see docs/MONITORING.md)."
+}

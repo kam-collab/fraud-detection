@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle: var(--subtle);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+
+  --color-ok: var(--status-ok);
+  --color-ok-fg: var(--status-ok-fg);
+  --color-ok-bg: var(--status-ok-bg);
+  --color-warn: var(--status-warn);
+  --color-warn-fg: var(--status-warn-fg);
+  --color-warn-bg: var(--status-warn-bg);
+  --color-alert: var(--status-alert);
+  --color-alert-fg: var(--status-alert-fg);
+  --color-alert-bg: var(--status-alert-bg);
+
+  --color-series-1: var(--series-1);
+  --color-series-2: var(--series-2);
+  --color-series-3: var(--series-3);
+  --color-series-neutral: var(--series-neutral);
+
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --radius-card: 0.75rem;
+}
+
+:root {
+  color-scheme: light;
+  --background: #f9f9f7;
+  --foreground: #0b0b0b;
+  --card: #fcfcfb;
+  --muted: #f0efec;
+  --muted-foreground: #52514e;
+  --subtle: #6b6a66;
+  --border: #e1e0d9;
+  --input: #c3c2b7;
+  --ring: #2a78d6;
+  --primary: #1c5cab;
+  --primary-foreground: #ffffff;
+  --accent: #e9f1fc;
+
+  /* Status: mark colour, readable text colour, tinted surface. Always paired with icon + label. */
+  --status-ok: #0ca30c;
+  --status-ok-fg: #006300;
+  --status-ok-bg: #e7f5e7;
+  --status-warn: #fab219;
+  --status-warn-fg: #6e4a00;
+  --status-warn-bg: #fdf1d3;
+  --status-alert: #d03b3b;
+  --status-alert-fg: #9c2222;
+  --status-alert-bg: #fbe6e6;
+
+  /* Chart series (fixed order) and chrome. */
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-3: #1baf7a;
+  --series-neutral: #898781;
+  --chart-grid: #e1e0d9;
+  --chart-axis: #c3c2b7;
+  --chart-tick: #6b6a66;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #0d0d0d;
+  --foreground: #ffffff;
+  --card: #1a1a19;
+  --muted: #262624;
+  --muted-foreground: #c3c2b7;
+  --subtle: #a3a29a;
+  --border: #2c2c2a;
+  --input: #4a4a46;
+  --ring: #6da7ec;
+  --primary: #86b6ef;
+  --primary-foreground: #0b0b0b;
+  --accent: #16263b;
+
+  --status-ok: #0ca30c;
+  --status-ok-fg: #6fd96f;
+  --status-ok-bg: #10291080;
+  --status-warn: #fab219;
+  --status-warn-fg: #fbc34d;
+  --status-warn-bg: #3a2c0880;
+  --status-alert: #d03b3b;
+  --status-alert-fg: #f39a9a;
+  --status-alert-bg: #3d141480;
+
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+  --series-neutral: #898781;
+  --chart-grid: #2c2c2a;
+  --chart-axis: #383835;
+  --chart-tick: #a3a29a;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  /* Recharts draws its own focus rectangle on click; keyboard focus is handled above. */
+  .recharts-wrapper :focus:not(:focus-visible),
+  .recharts-surface:focus {
+    outline: none;
+  }
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
