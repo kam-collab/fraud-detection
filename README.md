@@ -199,8 +199,3 @@ data/  models/  reports/  docs/
 4. Handle selective labels with a small randomised hold-out of blocked traffic.
 5. Move feature history to an online feature store; schedule retraining with champion and
    challenger in shadow.
-
-## Use of AI tools
-
-The brief allows AI tools. This submission was built with Claude Code (planning, code, tests,
-notebook and documentation), with the approach informed by the references in `docs/ARCH.md`.
